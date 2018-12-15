@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main(){
+	int nbr;
+	int temp;
+	int multi = 1;
+	
+	printf("Entrer votre nombre : ");
+	scanf("%d", &nbr);
+	temp = nbr;
+	
+	while(temp != 0){
+		if(temp % 10 != 0){
+			multi = multi * (temp % 10);	
+		}
+		temp = temp - (temp % 10);
+		temp = temp / 10;
+		//printf("temp = %d\n", temp);
+		//printf("multi = %d\n", multi);
+	}
+	
+	//printf("Multi = %d \n", multi);
+	//printf("Nbr = %d \n", nbr);
+	//printf("Temp = %d \n", temp);
+	//printf("Nbr mod multi = %d", (nbr % multi));
+	
+	if((nbr % multi) == 0){
+		printf("Le nombre %d est prodigieux.", nbr);
+	}else{
+		printf("Le nombre %d n'est pas prodigieux.", nbr);
+	}
+	return 1;
+}
